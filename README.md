@@ -30,10 +30,27 @@ Source: UCI Machine Learning Repository
 Dataset: Dry Bean Dataset  
 Records: approximately 13,611  
 Features: 16 numerical input features  
+Licence: CC BY 4.0
 
 ## Planned Models
 
+- DummyClassifier baseline
+- K-Nearest Neighbours
+- Decision Tree
+- Random Forest
+
 ## Evaluation
 
+Primary metric:
+- Macro F1 score
+
+Additional evaluation:
+- Accuracy
+- Per-class precision and recall
+- Confusion matrix
 
 ## Repository Structure
+
+- `notebooks/` - analysis and modelling notebooks
+- `src/` - reusable Python code
+- `data/` - dataset information
