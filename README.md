@@ -35,7 +35,11 @@ Licence: CC BY 4.0
 ## Models
 
 - Milestone 2: DummyClassifier baseline (`most_frequent`).
-- Planned for Milestone 3: K-Nearest Neighbours, Decision Tree and Random Forest. These models have not been implemented yet.
+- Milestone 3: K-Nearest Neighbours, Decision Tree and Random Forest.
+
+All three learned models were compared against the baseline. GridSearchCV was used to test different model settings.
+
+Random Forest achieved the highest tuning CV macro F1 score of 0.9375, followed closely by KNN at 0.9374.
 
 ## Evaluation
 
@@ -47,7 +51,11 @@ Additional evaluation:
 - Per-class precision and recall
 - Confusion matrix
 
-The current baseline uses accuracy and macro F1 with 5-fold stratified cross-validation on the training data. Per-class precision/recall and a confusion matrix are planned for later evaluation. The held-out test set is reserved for final evaluation.
+The models were evaluated using 5-fold stratified cross validation on the training data. The results were compared before and after hyperparameter tuning.
+
+The tuned Random Forest was used for error analysis. SIRA had the lowest recall, with the most frequent errors occurring between SIRA and DERMASON.
+
+The held-out test set is reserved for final evaluation in Milestone 4.
 
 ## Repository Structure
 
@@ -87,9 +95,11 @@ python -m jupyterlab
 
 Open `notebooks/01_data_audit_and_baseline.ipynb` and run it from top to bottom using the project virtual environment as the notebook kernel. In VS Code, select `.venv` as the notebook kernel and use **Run All**. Keep the raw spreadsheet at `data/raw/Dry_Bean_Dataset.xlsx`.
 
-## Current Milestone 2 Progress
+If the spreadsheet is missing, download it from the [UCI Dry Bean Dataset page](https://archive.ics.uci.edu/dataset/602/dry+bean+dataset), extract the archive and place `Dry_Bean_Dataset.xlsx` in `data/raw/`.
 
-The notebook currently includes:
+## Current Project Progress
+
+Milestone 2 included:
 
 - Dataset loading and initial dataset inspection.
 - Data quality audit of missing values, duplicates, target distribution and numerical summaries.
@@ -99,4 +109,12 @@ The notebook currently includes:
 - Five-fold stratified cross-validation.
 - Baseline model evaluation with per-fold scores, means and standard deviations for accuracy and macro F1.
 
-Learned model comparisons remain work for Milestone 3.
+Milestone 3 included:
+
+- Comparison of KNN, Decision Tree and Random Forest.
+- Hyperparameter tuning using GridSearchCV.
+- Initial and tuned model performance comparison.
+- Confusion matrices and per-class error analysis.
+- Draft discussion and conclusion.
+
+The final test-set evaluation, report and demonstration video will be completed in Milestone 4.
